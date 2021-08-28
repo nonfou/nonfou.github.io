@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+  <title>徐冲的草稿本</title>
+  
+  
+  <link href="http://nonfou.github.io/atom.xml" rel="self"/>
+  
+  <link href="http://nonfou.github.io/"/>
+  <updated>2021-08-28T17:25:41.452Z</updated>
+  <id>http://nonfou.github.io/</id>
+  
+  <author>
+    <name>Chong Xu</name>
+    
+  </author>
+  
+  <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Nginx转发问题</title>
+    <link href="http://nonfou.github.io/2021/08/28/Nginx%E8%BD%AC%E5%8F%91%E9%97%AE%E9%A2%98/"/>
+    <id>http://nonfou.github.io/2021/08/28/Nginx%E8%BD%AC%E5%8F%91%E9%97%AE%E9%A2%98/</id>
+    <published>2021-08-28T10:41:18.000Z</published>
+    <updated>2021-08-28T17:25:41.452Z</updated>
+    
+    <content type="html"><![CDATA[<h3 id="Nginx转发接口异常，随机出现404-200"><a href="#Nginx转发接口异常，随机出现404-200" class="headerlink" title="Nginx转发接口异常，随机出现404/200"></a>Nginx转发接口异常，随机出现404/200</h3><h4 id="问题"><a href="#问题" class="headerlink" title="问题"></a>问题</h4><p>前端nginx部署，后端单体Spring Boot服务</p><p>重新部署后，当访问页面时，新添加的模块里的接口有时出现404，有时正常返回200；</p><h4 id="思考"><a href="#思考" class="headerlink" title="思考"></a>思考</h4><p>之前遇到过一个差不多的问题，k8s部署应用时，应用存在多实例的情况，而其中一个实例是比较久的代码打包的，访问接口时就出现有时报错有时正常的情况</p><pre class="mermaid">graph TB    A[请求] --> B{"Nginx"}    B -->C["应用实例A"]    B -->D["应用实例B"]</pre><blockquote><p>新添加的接口只存在应用实例B中，当nginx请求转发到应用实例B中，接口正常返回，当nginx请求转发到应用实例A中，接口表现异常</p></blockquote><p>由此，我想到应该是Nginx转发出现了问题。</p><h4 id="解决"><a href="#解决" class="headerlink" title="解决"></a>解决</h4><p>先查看日志</p><ol><li><p>nginx访问日志出现了505 552的情况</p></li><li><p>nginx错误日志</p><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">connect() failed (111: Connection refused) while connecting to upstream</span><br></pre></td></tr></table></figure></li></ol><p>应用是单体应用部署，不会是上次遇到的情况。</p><p>搜索了一堆东西……</p><p><a href="https://blog.csdn.net/qq_41672878/article/details/108162622">nginx 交替出现404 和200的问题</a></p><p>查看nginx进程</p><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ps -ef | grep nginx</span><br></pre></td></tr></table></figure><p>果然存在多个master进程，保留一个就好了。</p><pre class="mermaid">graph TB    A[请求] --> B{"Nginx服务器"}    B -->C["Nginx Master A"]    B -->D["Nginx Master B"]    C -->E["应用实例"]    D -->E</pre><blockquote><p>当接口通过master A转发时，找不到匹配的url，表现在页面就是404</p></blockquote><blockquote><p>当接口通过master B转发时，正确匹配到后端url，表现就是200</p></blockquote>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;h3 id=&quot;Nginx转发接口异常，随机出现404-200&quot;&gt;&lt;a href=&quot;#Nginx转发接口异常，随机出现404-200&quot; class=&quot;headerlink&quot; title=&quot;Nginx转发接口异常，随机出现404/200&quot;&gt;&lt;/a&gt;Nginx转发接口异常，随机出现4</summary>
+      
+    
+    
+    
+    
+    <category term="Nginx" scheme="http://nonfou.github.io/tags/Nginx/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>linxu随笔</title>
+    <link href="http://nonfou.github.io/2021/08/15/linxu%E9%9A%8F%E7%AC%94/"/>
+    <id>http://nonfou.github.io/2021/08/15/linxu%E9%9A%8F%E7%AC%94/</id>
+    <published>2021-08-15T10:40:49.000Z</published>
+    <updated>2021-08-28T14:51:41.072Z</updated>
+    
+    <content type="html"><![CDATA[<h3 id="发行版本"><a href="#发行版本" class="headerlink" title="发行版本"></a>发行版本</h3><p>我安装使用过的发行版本中，觉得体验比较好的。</p><ul><li><p><strong>Linux Mint</strong></p><p>mint 是我在反复折腾多个发行版本后，整体体验最好的，也是最推荐使用的。</p></li><li><p><strong>Manjaro</strong></p></li><li><p><strong>Debian</strong></p></li><li><p><strong>Ubuntu</strong></p></li><li><p><strong>Elementary OS</strong></p><p>基于Ubuntu，是所有发行版本中最漂亮的，整体ui风格比较统一，用起来也有Mac OS的感觉，不过值得吐槽的是稳定性相对较差，不知怎么界面就卡死，UI是真的好看，诱惑很大，不过还是因为稳定性放弃了。</p></li></ul><h3 id="桌面环境"><a href="#桌面环境" class="headerlink" title="桌面环境"></a>桌面环境</h3><ul><li><p><strong>Cinnamon</strong></p><p>接近Windows的体验</p></li><li><p><strong>GNOME</strong></p><p>接近Mac OS的体验</p></li><li><p><strong>KDE</strong></p></li><li><p><strong>Mate</strong></p></li><li><p><strong>Xfce</strong></p></li></ul>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;h3 id=&quot;发行版本&quot;&gt;&lt;a href=&quot;#发行版本&quot; class=&quot;headerlink&quot; title=&quot;发行版本&quot;&gt;&lt;/a&gt;发行版本&lt;/h3&gt;&lt;p&gt;我安装使用过的发行版本中，觉得体验比较好的。&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;p&gt;&lt;strong&gt;Linux Mint&lt;/str</summary>
+      
+    
+    
+    
+    
+    <category term="linux" scheme="http://nonfou.github.io/tags/linux/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>software</title>
+    <link href="http://nonfou.github.io/2021/08/15/software/"/>
+    <id>http://nonfou.github.io/2021/08/15/software/</id>
+    <published>2021-08-14T16:08:26.000Z</published>
+    <updated>2021-08-28T16:40:26.200Z</updated>
+    
+    <content type="html"><![CDATA[<h2 id="软件"><a href="#软件" class="headerlink" title="软件"></a>软件</h2><ul><li><p>Typora</p><p>markdown编辑器</p></li><li><p>vscode</p><p>文本编辑器</p></li><li><p>Docker</p><blockquote><p><a href="http://get.daocloud.io/#install-docker">http://get.daocloud.io/#install-docker</a></p></blockquote><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">curl -sSL https://get.daocloud.io/docker | sh</span><br></pre></td></tr></table></figure></li><li><p>docker compose</p> <figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo aptitude install docker-compose</span><br></pre></td></tr></table></figure><p> 构建mysql</p>   <figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash"> Mysql根目录</span></span><br><span class="line">mkdir -p ~/Programs/Mysql</span><br><span class="line"><span class="meta">#</span><span class="bash"> 数据目录</span></span><br><span class="line">mkdir -p ~/Programs/Mysql/data</span><br><span class="line"><span class="meta">#</span><span class="bash"> 配置目录</span></span><br><span class="line">mkdir -p ~/Programs/Mysql/conf</span><br><span class="line"><span class="meta">#</span><span class="bash"> 初始化脚本目录</span></span><br><span class="line">mkdir -p ~/Porgrams/Mysql/init</span><br><span class="line"></span><br><span class="line">cd ~/Programs/Mysql</span><br></pre></td></tr></table></figure><p> touch <a href="mysql/docker-compose">docker-compose.yaml</a></p></li><li><p>命令行翻译</p><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">sudo aptitude install npm</span><br><span class="line"><span class="meta">#</span><span class="bash"> 配置淘宝镜像</span></span><br><span class="line">npm config set registry https://registry.npm.taobao.org</span><br><span class="line">npm install terminal-translate -g</span><br></pre></td></tr></table></figure></li></ul><h2 id="问题记录"><a href="#问题记录" class="headerlink" title="问题记录"></a>问题记录</h2><ul><li><p>将当前用户加入docker组</p><blockquote><p>ERROR: Couldn’t connect to Docker daemon at http+docker://localunixsocket - is it running?<br>If it’s at a non-standard location, specify the URL with the DOCKER_HOST environment variable.</p></blockquote></li></ul><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">sudo gpasswd -a $&#123;USER&#125; docker</span><br><span class="line"><span class="meta">#</span><span class="bash">将普通用户username加入到docker组</span></span><br><span class="line">sudo gpasswd -a username docker</span><br><span class="line"><span class="meta">#</span><span class="bash">更新docker组</span></span><br><span class="line">newgrp docker</span><br></pre></td></tr></table></figure>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;h2 id=&quot;软件&quot;&gt;&lt;a href=&quot;#软件&quot; class=&quot;headerlink&quot; title=&quot;软件&quot;&gt;&lt;/a&gt;软件&lt;/h2&gt;&lt;ul&gt;
+&lt;li&gt;&lt;p&gt;Typora&lt;/p&gt;
+&lt;p&gt;markdown编辑器&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;vscode&lt;/p&gt;
+&lt;p&gt;文本编辑</summary>
+      
+    
+    
+    
+    
+  </entry>
+  
+  <entry>
+    <title>NoSuchMethodError</title>
+    <link href="http://nonfou.github.io/2021/08/12/NoSuchMethodError/"/>
+    <id>http://nonfou.github.io/2021/08/12/NoSuchMethodError/</id>
+    <published>2021-08-12T10:41:18.000Z</published>
+    <updated>2021-08-28T16:46:55.349Z</updated>
+    
+    <content type="html"><![CDATA[<h4 id="NoSuchMethodError"><a href="#NoSuchMethodError" class="headerlink" title="NoSuchMethodError"></a>NoSuchMethodError</h4><p>大多数情况下是因为jar包冲突</p><p>以找不到该方法com.nonfou.test.util.TimeUtil.getYear()为例</p><blockquote><p>jar包A中不存在此方法，版本为1.5.6</p><p>jar包B中存在此方法，版本为2.6.3</p><p>现在系统中同时引用这两个jar包，此时如果你的业务依赖TimeUtil.getYear()方法，就需要把jar包A在你的环境依赖中去掉</p></blockquote><ol><li><p>查看运行时，TimeUtil类引用自哪个jar包</p><p>利用工具ARTHAS[<a href="https://arthas.aliyun.com/doc/quick-start.html">快速入门 — Arthas 3.5.3 文档 (aliyun.com)</a>]</p></li><li><p>分析pom依赖结构，去掉步骤1中获取的jar包版本</p><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash"> 查找artifactId为common_uitl的依赖关系</span></span><br><span class="line">mvn dependency:tree -Dincludes=:common_util</span><br></pre></td></tr></table></figure></li><li><p>通过步骤2可以找到哪些jar包引用了jar包A，在pom中去掉即可</p></li></ol>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;h4 id=&quot;NoSuchMethodError&quot;&gt;&lt;a href=&quot;#NoSuchMethodError&quot; class=&quot;headerlink&quot; title=&quot;NoSuchMethodError&quot;&gt;&lt;/a&gt;NoSuchMethodError&lt;/h4&gt;&lt;p&gt;大多数情况下是因为j</summary>
+      
+    
+    
+    
+    
+    <category term="Java" scheme="http://nonfou.github.io/tags/Java/"/>
+    
+  </entry>
+  
+</feed>
