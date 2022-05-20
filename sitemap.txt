@@ -9,8 +9,8 @@ http://nonfou.github.io/2021/08/28/Nginx%E8%BD%AC%E5%8F%91%E9%97%AE%E9%A2%98/
 http://nonfou.github.io/2021/08/15/software/
 http://nonfou.github.io/
 http://nonfou.github.io/tags/Nginx/
-http://nonfou.github.io/tags/Java/
 http://nonfou.github.io/tags/spring/
-http://nonfou.github.io/tags/linux/
+http://nonfou.github.io/tags/Java/
 http://nonfou.github.io/tags/oracle/
+http://nonfou.github.io/tags/linux/
 http://nonfou.github.io/tags/win10/
