@@ -2,7 +2,7 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
-    <loc>http://nonfou.github.io/2022/07/12/grub%E4%B9%B1%E7%A0%81/</loc>
+    <loc>http://nonfou.github.io/2021/08/15/Linux%E4%BD%BF%E7%94%A8%E5%B0%8F%E7%BB%93/</loc>
     
     <lastmod>2022-07-12</lastmod>
     
@@ -30,15 +30,6 @@
   
   <url>
     <loc>http://nonfou.github.io/2022/01/05/oracle%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4/</loc>
-    
-    <lastmod>2022-07-12</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>http://nonfou.github.io/2021/08/12/NoSuchMethodError/</loc>
     
     <lastmod>2022-07-12</lastmod>
     
@@ -101,15 +92,6 @@
   </url>
   
   <url>
-    <loc>http://nonfou.github.io/2021/08/15/software/</loc>
-    
-    <lastmod>2022-06-25</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
     <loc>http://nonfou.github.io/about/index.html</loc>
     
     <lastmod>2022-05-24</lastmod>
@@ -153,6 +135,13 @@
   </url>
   
   <url>
+    <loc>http://nonfou.github.io/tags/Nginx/</loc>
+    <lastmod>2022-07-12</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
     <loc>http://nonfou.github.io/tags/Oracle/</loc>
     <lastmod>2022-07-12</lastmod>
     <changefreq>weekly</changefreq>
@@ -168,13 +157,6 @@
   
   <url>
     <loc>http://nonfou.github.io/tags/Mock/</loc>
-    <lastmod>2022-07-12</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
-    <loc>http://nonfou.github.io/tags/Nginx/</loc>
     <lastmod>2022-07-12</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
