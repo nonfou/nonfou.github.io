@@ -4,6 +4,25 @@
   
     
     <entry>
+      <title>grub乱码</title>
+      <link href="/2022/07/12/grub%E4%B9%B1%E7%A0%81/"/>
+      <url>/2022/07/12/grub%E4%B9%B1%E7%A0%81/</url>
+      
+        <content type="html"><![CDATA[<span id="more"></span><h3 id="问题"><a href="#问题" class="headerlink" title="问题"></a>问题</h3><p>LMDE grub启动的时候出现乱码</p><h3 id="解决"><a href="#解决" class="headerlink" title="解决"></a>解决</h3><ul><li>查看grub下的字体</li></ul><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">ls /boot/grub/fonts/</span><br></pre></td></tr></table></figure><ul><li>修改unicode字体<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">vim /etc/default/grub.d/60_mint-theme.cfg</span><br></pre></td></tr></table></figure></li></ul><img src="/2022/07/12/grub%E4%B9%B1%E7%A0%81/grub-font.png" class="" title="字体配置">]]></content>
+      
+      
+      
+        <tags>
+            
+            <tag> Linux </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>CentOS7安装Oracle19c</title>
       <link href="/2022/07/08/CentOS7%E5%AE%89%E8%A3%85Oracle19c/"/>
       <url>/2022/07/08/CentOS7%E5%AE%89%E8%A3%85Oracle19c/</url>
@@ -14,9 +33,9 @@
       
         <tags>
             
-            <tag> linux </tag>
+            <tag> Linux </tag>
             
-            <tag> oracle </tag>
+            <tag> Oracle </tag>
             
         </tags>
       
@@ -35,9 +54,9 @@
       
         <tags>
             
-            <tag> java </tag>
+            <tag> Java </tag>
             
-            <tag> mock </tag>
+            <tag> Mock </tag>
             
         </tags>
       
@@ -56,7 +75,7 @@
       
         <tags>
             
-            <tag> spring </tag>
+            <tag> Spring </tag>
             
         </tags>
       
@@ -75,7 +94,7 @@
       
         <tags>
             
-            <tag> spring </tag>
+            <tag> Spring </tag>
             
         </tags>
       
@@ -94,7 +113,7 @@
       
         <tags>
             
-            <tag> win10 </tag>
+            <tag> Win </tag>
             
         </tags>
       
@@ -113,7 +132,7 @@
       
         <tags>
             
-            <tag> linux </tag>
+            <tag> Linux </tag>
             
         </tags>
       
@@ -132,7 +151,7 @@
       
         <tags>
             
-            <tag> oracle </tag>
+            <tag> Oracle </tag>
             
         </tags>
       
@@ -151,7 +170,7 @@
       
         <tags>
             
-            <tag> linux </tag>
+            <tag> Linux </tag>
             
         </tags>
       
