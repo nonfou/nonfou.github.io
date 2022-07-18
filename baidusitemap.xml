@@ -1,6 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
+    <loc>http://nonfou.github.io/2022/07/19/CentOS7%E5%AE%89%E8%A3%85Oracle19c-%E9%9D%99%E9%BB%98%E5%AE%89%E8%A3%85/</loc>
+    <lastmod>2022-07-18</lastmod>
+  </url>
+  <url>
+    <loc>http://nonfou.github.io/2022/07/08/CentOS7%E5%AE%89%E8%A3%85Oracle19c-VNC%E5%AE%89%E8%A3%85/</loc>
+    <lastmod>2022-07-18</lastmod>
+  </url>
+  <url>
     <loc>http://nonfou.github.io/2021/08/15/Linux%E4%BD%BF%E7%94%A8%E5%B0%8F%E7%BB%93/</loc>
     <lastmod>2022-07-12</lastmod>
   </url>
@@ -30,10 +38,6 @@
   </url>
   <url>
     <loc>http://nonfou.github.io/2022/01/05/centos%E7%AC%94%E8%AE%B0/</loc>
-    <lastmod>2022-07-12</lastmod>
-  </url>
-  <url>
-    <loc>http://nonfou.github.io/2022/07/08/CentOS7%E5%AE%89%E8%A3%85Oracle19c/</loc>
     <lastmod>2022-07-12</lastmod>
   </url>
   <url>
