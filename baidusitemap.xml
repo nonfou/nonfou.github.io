@@ -1,6 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
+    <loc>http://nonfou.github.io/2022/07/07/Mock%E5%90%8E%E7%AB%AF%E6%8E%A5%E5%8F%A3/</loc>
+    <lastmod>2022-07-25</lastmod>
+  </url>
+  <url>
     <loc>http://nonfou.github.io/2022/07/19/CentOS7%E5%AE%89%E8%A3%85Oracle19c-%E9%9D%99%E9%BB%98%E5%AE%89%E8%A3%85/</loc>
     <lastmod>2022-07-18</lastmod>
   </url>
@@ -26,10 +30,6 @@
   </url>
   <url>
     <loc>http://nonfou.github.io/2021/08/28/Nginx%E8%BD%AC%E5%8F%91%E9%97%AE%E9%A2%98/</loc>
-    <lastmod>2022-07-12</lastmod>
-  </url>
-  <url>
-    <loc>http://nonfou.github.io/2022/07/07/Mock%E5%90%8E%E7%AB%AF%E6%8E%A5%E5%8F%A3/</loc>
     <lastmod>2022-07-12</lastmod>
   </url>
   <url>
