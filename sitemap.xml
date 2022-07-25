@@ -151,14 +151,7 @@
   </url>
   
   <url>
-    <loc>http://nonfou.github.io/tags/Java/</loc>
-    <lastmod>2022-07-25</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
-    <loc>http://nonfou.github.io/tags/Mock/</loc>
+    <loc>http://nonfou.github.io/tags/Nginx/</loc>
     <lastmod>2022-07-25</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
@@ -172,7 +165,14 @@
   </url>
   
   <url>
-    <loc>http://nonfou.github.io/tags/Nginx/</loc>
+    <loc>http://nonfou.github.io/tags/Java/</loc>
+    <lastmod>2022-07-25</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>http://nonfou.github.io/tags/Mock/</loc>
     <lastmod>2022-07-25</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
